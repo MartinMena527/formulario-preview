@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario institucional</title>
+  <style>
+    :root{--navy:#17324d;--blue:#2f6f9f;--ink:#203040;--muted:#6f7d89;--line:#dce5eb;--bg:#f4f7f9;--white:#fff;--accent:#c59642}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+    .topbar{height:7px;background:linear-gradient(90deg,var(--navy),var(--blue),var(--accent))}
+    .shell{max-width:980px;margin:0 auto;padding:42px 20px 56px}.brand{display:flex;align-items:center;gap:14px;margin-bottom:34px}.mark{width:52px;height:52px;border-radius:15px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800;font-size:20px;box-shadow:0 8px 20px #17324d22}.brand strong{display:block;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}.brand span{font-size:13px;color:var(--muted)}
+    .hero{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:34px 38px;margin-bottom:22px;box-shadow:0 14px 35px #17324d0a}.eyebrow{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.hero h1{margin:9px 0 10px;color:var(--navy);font-size:clamp(28px,5vw,44px);line-height:1.1;letter-spacing:-.03em}.hero p{margin:0;color:var(--muted);max-width:680px;font-size:16px}
+    .progress{display:flex;gap:8px;margin:26px 0 0}.progress i{height:5px;flex:1;border-radius:8px;background:#dbe5ec}.progress i:first-child{background:var(--blue)}
+    form{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:30px 38px;box-shadow:0 14px 35px #17324d0a}.section{padding:4px 0 25px}.section+.section{border-top:1px solid var(--line);padding-top:27px}.section h2{margin:0 0 4px;font-size:19px;color:var(--navy)}.section small{display:block;color:var(--muted);margin-bottom:20px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}label{font-size:14px;font-weight:700;color:var(--ink)}.req{color:#b54b4b}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:11px;background:#fbfcfd;color:var(--ink);font:inherit;padding:12px 13px;outline:none;transition:.2s}textarea{resize:vertical;min-height:112px}input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px #2f6f9f18;background:#fff}.hint{font-size:12px;color:var(--muted);font-weight:400}.check{display:flex;align-items:flex-start;gap:10px;margin-top:8px;font-weight:500;color:var(--muted);font-size:13px}.check input{width:17px;height:17px;margin-top:2px;accent-color:var(--blue)}.actions{display:flex;justify-content:flex-end;gap:12px;padding-top:4px}.button{border:0;border-radius:11px;padding:13px 21px;font:inherit;font-weight:800;cursor:pointer}.secondary{background:#eef3f6;color:var(--navy)}.primary{background:var(--navy);color:#fff;box-shadow:0 8px 16px #17324d25}.primary:hover{background:#224c70}.notice{display:none;margin-top:20px;padding:17px;border-radius:12px;background:#edf8f1;color:#21613b;border:1px solid #c9e8d3;font-weight:650}.notice.show{display:block}.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:20px}
+    @media(max-width:650px){.shell{padding:28px 13px 42px}.hero,form{padding:25px 20px;border-radius:18px}.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.actions{flex-direction:column-reverse}.button{width:100%}.brand{margin-bottom:24px}}
+  </style>
+</head>
+<body>
+  <div class="topbar"></div>
+  <main class="shell">
+    <div class="brand"><div class="mark">IN</div><div><strong>Institución educativa</strong><span>Formulario digital de atención</span></div></div>
+    <section class="hero">
+      <div class="eyebrow">Registro institucional</div>
+      <h1>Queremos conocerte</h1>
+      <p>Completa la siguiente información. Tus datos nos ayudarán a brindarte una mejor atención y dar seguimiento a tu solicitud.</p>
+      <div class="progress" aria-label="Progreso del formulario"><i></i><i></i><i></i></div>
+    </section>
+    <form id="demoForm">
+      <section class="section"><h2>Información personal</h2><small>Proporciona tus datos de contacto.</small>
+        <div class="grid">
+          <div class="field"><label for="name">Nombre completo <span class="req">*</span></label><input id="name" name="name" required placeholder="Escribe tu nombre" /></div>
+          <div class="field"><label for="email">Correo electrónico <span class="req">*</span></label><input id="email" name="email" type="email" required placeholder="nombre@correo.com" /></div>
+          <div class="field"><label for="phone">Teléfono <span class="hint">(opcional)</span></label><input id="phone" name="phone" type="tel" placeholder="10 dígitos" /></div>
+          <div class="field"><label for="profile">Perfil <span class="req">*</span></label><select id="profile" name="profile" required><option value="">Selecciona una opción</option><option>Alumno(a)</option><option>Padre o madre de familia</option><option>Docente</option><option>Personal administrativo</option><option>Otro</option></select></div>
+        </div>
+      </section>
+      <section class="section"><h2>Detalles de la solicitud</h2><small>Cuéntanos brevemente cómo podemos ayudarte.</small>
+        <div class="grid">
+          <div class="field"><label for="topic">Tema de la solicitud <span class="req">*</span></label><select id="topic" name="topic" required><option value="">Selecciona un tema</option><option>Información general</option><option>Atención académica</option><option>Servicios escolares</option><option>Admisiones</option><option>Otro</option></select></div>
+          <div class="field"><label for="date">Fecha de contacto preferida</label><input id="date" name="date" type="date" /></div>
+          <div class="field full"><label for="message">Mensaje <span class="req">*</span></label><textarea id="message" name="message" required placeholder="Escribe aquí los detalles de tu solicitud..."></textarea></div>
+          <div class="field full"><label class="check"><input type="checkbox" required /> <span>Acepto que la institución utilice mis datos únicamente para atender y dar seguimiento a esta solicitud. <span class="req">*</span></span></label></div>
+        </div>
+      </section>
+      <div class="actions"><button type="reset" class="button secondary">Limpiar</button><button type="submit" class="button primary">Enviar solicitud&nbsp; →</button></div>
+      <div id="notice" class="notice" role="status">Vista previa: tu solicitud fue validada correctamente. En la versión final, aquí se enviaría y registraría la información.</div>
+    </form>
+    <div class="footer">Este formulario es una demostración visual · © 2026 Institución educativa</div>
+  </main>
+  <script>document.getElementById('demoForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('notice').classList.add('show');this.querySelector('button[type="submit"]').textContent='Solicitud validada ✓';});document.getElementById('demoForm').addEventListener('reset',function(){document.getElementById('notice').classList.remove('show');setTimeout(()=>this.querySelector('button[type="submit"]').innerHTML='Enviar solicitud&nbsp; →',10);});</script>
+</body>
+</html>
